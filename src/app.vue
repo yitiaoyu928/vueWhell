@@ -1,19 +1,20 @@
 <template>
   <div>
     <div>
-      <qgy-button :loading="loading1" @click="toggle">default</qgy-button>
+      <qgy-button :loading="loading1" @click="toggle" title="点击我可以查看loading"
+        >default</qgy-button
+      >
       <qgy-button
         type="primary"
         icon-class="iconfont icon-download"
         icon-direction="right"
-        :loading="loading1"
-        @click="toggle"
         >primary</qgy-button
       >
       <qgy-button
         type="success"
         icon-class="iconfont icon-download"
         icon-direction="right"
+        user-class="g-button"
         >success</qgy-button
       >
     </div>
@@ -38,4 +39,8 @@ export default {
   },
 };
 </script>
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.g-button {
+  background-color: #000;
+}
+</style>

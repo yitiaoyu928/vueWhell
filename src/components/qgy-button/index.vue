@@ -1,5 +1,8 @@
 <template>
-  <button :class="['qgy-button', { [`qgy-${type}`]: true }]" @click="$emit('click')">
+  <button
+    :class="[userClass, 'qgy-button', { [`qgy-${type}`]: true }]"
+    @click="$emit('click')"
+  >
     <i
       :class="['qgy-i', iconClass, { [`icon-${iconDirection}`]: true }]"
       v-if="!loading"
@@ -26,6 +29,10 @@ export default {
       validator: function (value) {
         return ["default", "primary", "success"].indexOf(value) !== -1;
       },
+    },
+    userClass: {
+      type: String,
+      default: "",
     },
     iconClass: {
       type: String,
