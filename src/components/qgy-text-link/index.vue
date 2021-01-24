@@ -9,6 +9,9 @@ export default {
     type: {
       type: String,
       default: "default",
+      validator: function (value) {
+        return ["default", "primary", "success"].indexOf(value) !== -1;
+      },
     },
     link: {
       type: String,
@@ -20,22 +23,22 @@ export default {
 <style lang="scss" scoped>
 @import "../../public/style";
 .qgy-link {
-	text-decoration: none;
-	color:$defaultHoverColor;
-	&:hover {
-		color:$defaultColor;
-	}
+  text-decoration: none;
+  color: $defaultHoverColor;
+  &:hover {
+    color: $defaultColor;
+  }
 }
 .qgy-primary {
-	color: $primaryColor;
-	&:hover {
-		color: $primaryHoverColor;
-	}
+  color: $primaryColor;
+  &:hover {
+    color: $primaryHoverColor;
+  }
 }
 .qgy-success {
-	color: $successColor;
-	&:hover {
-		color: $successHoverColor;
-	}
+  color: $successColor;
+  &:hover {
+    color: $successHoverColor;
+  }
 }
 </style>
