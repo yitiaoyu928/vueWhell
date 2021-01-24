@@ -1,0 +1,44 @@
+{
+  "id": "2346095",
+  "name": "Vuewhell",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "372201",
+      "name": "cc-lock",
+      "font_class": "lock",
+      "unicode": "e66b",
+      "unicode_decimal": 58987
+    },
+    {
+      "icon_id": "851467",
+      "name": "loading",
+      "font_class": "loading",
+      "unicode": "e6a6",
+      "unicode_decimal": 59046
+    },
+    {
+      "icon_id": "1277252",
+      "name": "user",
+      "font_class": "user",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
+      "icon_id": "18125966",
+      "name": "Cloud download",
+      "font_class": "download",
+      "unicode": "e868",
+      "unicode_decimal": 59496
+    },
+    {
+      "icon_id": "18991567",
+      "name": "cloud upload",
+      "font_class": "upload",
+      "unicode": "e83c",
+      "unicode_decimal": 59452
+    }
+  ]
+}
