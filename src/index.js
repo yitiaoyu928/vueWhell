@@ -13,36 +13,48 @@ let vm = new Vue({
 });
 let expect = chai.expect;
 {
-  const Constructor = Vue.extend(myButton);
-  const button = new Constructor({
-    propsData: {
-      type: "primary",
-      loading: true,
-    },
+  // 测试图标的样式
+  let Constructor = Vue.extend(myButton);
+  let button_test = new Constructor({
+    propsData:{
+      iconClass:'iconfont icon-download'
+    }
   });
-  button.$mount();
-  let buttonElement = button.$el;
-  expect(buttonElement.classList[1]).to.be.equal("qgy-primary");
-  button.$el.remove();
-  button.$destroy();
+  button_test.$mount();
+  let button = button_test.$el.querySelector('i');
+  let i_class = button.classList[2];
+  expect(i_class).to.be.a('string');
+  expect(i_class).to.equal('icon-download');
+  button_test.$destroy();
+  button_test.$el.remove();
 }
 {
-  const Constructor = Vue.extend(myButton);
-  const button = new Constructor({
-    propsData: {
-      iconDirection: "right",
-      loading: true,
-      iconClass: "iconfont icon-download",
-      type: "success",
-    },
+  // 测试图标的order
+  let Constructor = Vue.extend(myButton);
+  let button_test = new Constructor({
+    propsData:{
+      iconClass:'iconfont icon-download',
+      iconDirection:'right'
+    }
+  }).$mount('#test');
+  let button_i = button_test.$el.querySelector('i');
+  let {order} = window.getComputedStyle(button_i);
+  expect(order).to.equal('2');
+  button_test.$destroy();
+  button_test.$el.remove();
+}
+{
+  // 测试点击事件
+  let Constructor = Vue.extend(myButton);
+  let button_test = new Constructor({
+    propsData:{
+      iconClass:'iconfont icon-download'
+    }
+  }).$mount();
+  button_test.$on('click',()=>{
+    expect(1).to.equal(1);
   });
-  button.$mount("#test");
-  let i = button.$el.querySelectorAll("i");
-  let iClass = i[0].classList[2];
-  // 检测i的order
-  let {order} = window.getComputedStyle(i[0]);
-  expect(order).to.be.equal('2');
-  expect(iClass).to.be.equal('icon-loading');
-  button.$el.remove();
-  button.$destroy();
+  button_test.$el.click();
+  button_test.$el.remove();
+  button_test.$destroy();
 }
