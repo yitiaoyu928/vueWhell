@@ -38,6 +38,8 @@ let expect = chai.expect;
     }
   }).$mount('#test');
   let button_i = button_test.$el.querySelector('i');
+  let button_class = button_i.classList.length;
+  expect(button_class).to.equal(4);
   let {order} = window.getComputedStyle(button_i);
   expect(order).to.equal('2');
   button_test.$destroy();

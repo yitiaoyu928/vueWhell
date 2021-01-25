@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 module.exports = {
     mode: 'development',
+    devtool: 'cheap-module-eval-source-map',
     entry: './src/index.js',
     output: {
         path: path.resolve(__dirname, 'bundle'),
