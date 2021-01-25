@@ -23,6 +23,14 @@
       <qgy-link link="http://www.baidu.com" type="success"></qgy-link>
       <qgy-link link="http://www.baidu.com"></qgy-link>
     </div>
+    <div>
+      <qgy-tag>hello</qgy-tag>
+      <qgy-tag type="primary">hello</qgy-tag>
+      <qgy-tag type="success">hello</qgy-tag>
+    </div>
+    <div>
+      <qgy-switch off-bg-color="#ccc">按钮</qgy-switch>
+    </div>
   </div>
 </template>
 <script>
@@ -40,7 +48,6 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-.g-button {
-  background-color: #000;
-}
+
+
 </style>
