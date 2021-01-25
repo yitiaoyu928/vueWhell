@@ -1,6 +1,10 @@
 import qgyButton from './src/components/qgy-button/index.vue';
 import qgyLink from './src/components/qgy-text-link/index.vue';
+import qgyTag from './src/components/qgy-tag/index.vue';
+import qgySwitch from './src/components/qgy-switch/index.vue';
 export {
     qgyButton,
-    qgyLink
+    qgyLink,
+    qgyTag,
+    qgySwitch
 }
