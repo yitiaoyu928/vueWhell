@@ -7,10 +7,10 @@
            :value="value"
            :disabled="disabled"
            :readonly="readOnly"
-           @change="$emit('change',$event)"
-           @input="$emit('change',$event)"
-           @focus="$emit('change',$event)"
-           @blur="$emit('change',$event)">
+           @change="$emit('change',$event.target.value)"
+           @input="$emit('input',$event.target.value)"
+           @focus="$emit('focus',$event.target.value)"
+           @blur="$emit('blur',$event.target.value)">
     <template v-if="error">
       <qgy-icon icon="iconfont icon-point" class="err"></qgy-icon>
       <span v-text="errorMessage" class="err"></span>
@@ -63,7 +63,7 @@ export default {
       default:false
     },
     value:{
-      type:String,
+      type:[String,Number],
       default:''
     }
   }

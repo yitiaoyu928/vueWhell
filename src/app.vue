@@ -37,8 +37,10 @@
     <div>
       <qgy-input name="qgy" text="禁止修改" disabled value="七个鱼"></qgy-input>
       <qgy-input name="sss" text="只读" read-only value="Seven fish"></qgy-input>
-      <qgy-input name="qgy" text="错误" @change="inpChange" :error="true" error-message="信息错误"></qgy-input>
-      <qgy-input name="qgy" text="正确" :success="true" success-message="信息正确"></qgy-input>
+      <qgy-input name="qgy" text="错误" :error="true" error-message="信息错误"></qgy-input>
+      <qgy-input name="qgy" text="正确" v-model="text" :success="true" success-message="信息正确"></qgy-input>
+      <p>这是v-model数据测试：{{text}}</p>
+      <button v-on:click="changeInp">改变text</button>
     </div>
   </div>
 </template>
@@ -47,15 +49,15 @@ export default {
   data() {
     return {
       loading1: false,
-      text: "12313"
+      text: "hi"
     };
   },
   methods: {
     toggle() {
       this.loading1 = !this.loading1;
     },
-    inpChange(e) {
-      console.log(e)
+    changeInp() {
+      this.text=Math.random(1,1000);
     }
   },
 };
