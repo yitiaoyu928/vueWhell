@@ -4,11 +4,15 @@ import myButton from "./components/qgy-button/index.vue";
 import myTextLink from "./components/qgy-text-link/index.vue";
 import myTag from './components/qgy-tag/index.vue';
 import mySwitch from './components/qgy-switch/index.vue';
+import myInput from './components/qgy-input/index.vue';
+import myIcon from './components/qgy-icon/index.vue';
 import chai from "chai";
 Vue.component("qgy-button", myButton);
 Vue.component("qgy-link", myTextLink);
 Vue.component('qgy-tag',myTag);
 Vue.component('qgy-switch',mySwitch);
+Vue.component('qgy-input',myInput);
+Vue.component('qgy-icon',myIcon);
 let vm = new Vue({
   el: "#app",
   render: function(c) {
