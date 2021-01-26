@@ -1,8 +1,8 @@
 <template>
   <div :class="['qgy-switch',{[`qgy-${type}`]:true}]" :style="{backgroundColor:!cuts?bgColor:offBgColor}" @click="cut">
-    <span v-show="cuts" class="off" :style="{color:fontColor}">off</span>
+    <span v-show="cuts" class="off" :style="{color:fontColor}" v-text="off"></span>
     <div :class="['ball',{'switch-off':cuts},{'switch-on':!cuts}]" :style="{backgroundColor:ballColor}"></div>
-    <span v-show="!cuts" class="on" :style="{color:fontColor}">on</span>
+    <span v-show="!cuts" class="on" :style="{color:fontColor}" v-text="on"></span>
   </div>
 </template>
 
@@ -15,6 +15,14 @@ export default {
       validator: function (value) {
         return ['default', 'primary', 'success']
       }
+    },
+    off: {
+      type: String,
+      default: 'off'
+    },
+    on: {
+      type: String,
+      default: 'on'
     },
     bgColor: {
       type: String,

@@ -32,13 +32,13 @@
       <qgy-tag type="success">hello</qgy-tag>
     </div>
     <div>
-      <qgy-switch off-bg-color="#ccc">按钮</qgy-switch>
+      <qgy-switch off-bg-color="#ccc"></qgy-switch>
     </div>
     <div>
-      <qgy-input name="qgy" text="111" disabled value="七个鱼"></qgy-input>
-      <qgy-input name="sss" text="222" read-only value="Seven fish"></qgy-input>
-      <qgy-input name="qgy" text="111" @change="inpChange" :error="true" error-message="信息错误"></qgy-input>
-      <qgy-input name="qgy" text="333" :success="true" success-message="信息正确"></qgy-input>
+      <qgy-input name="qgy" text="禁止修改" disabled value="七个鱼"></qgy-input>
+      <qgy-input name="sss" text="只读" read-only value="Seven fish"></qgy-input>
+      <qgy-input name="qgy" text="错误" @change="inpChange" :error="true" error-message="信息错误"></qgy-input>
+      <qgy-input name="qgy" text="正确" :success="true" success-message="信息正确"></qgy-input>
     </div>
   </div>
 </template>
