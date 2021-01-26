@@ -63,7 +63,7 @@ export default {
       default:false
     },
     value:{
-      type:[String,Number],
+      type:[Number,String],
       default:''
     }
   }

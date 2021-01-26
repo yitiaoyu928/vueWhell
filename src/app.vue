@@ -58,6 +58,7 @@ export default {
     },
     changeInp() {
       this.text=Math.random(1,1000);
+
     }
   },
 };
