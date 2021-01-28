@@ -20,6 +20,12 @@
 + icon:string类型，自定义图标名称，默认为空
 ## ```<qgy-row>```组件
 + gutter：[string,Number]类型，子元素之间的间隔距离
++ align:String类型,接受参数有left,right,center
 ## ```<qgy-col>```组件
 + span:[string,Number]类型，元素占据的宽度，默认为占据满行
 + offset:[string,Number]类型，元素的偏移距离
++ xs:手机上元素占据大小,>576px
++ sm:平板上元素占据大小,577px>且<768px
++ md:中等PC屏幕上元素占据大小,769px>且<1200px
++ lg:超大PC屏幕上元素占据大小,>1200px
++ 以上四个接受一个对象,对象内有span和offset两个属性

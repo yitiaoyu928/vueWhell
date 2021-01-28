@@ -53,7 +53,7 @@
         <qgy-col span="10" offset="8">5</qgy-col>
       </qgy-row>
       <qgy-row gutter="5" align="center">
-        <qgy-col span="4">6</qgy-col>
+        <qgy-col span="4" :xs="{span:12,offset:4}" :md="{span:20}" :sm="{span:14}" :lg="{span:5}">6</qgy-col>
         <qgy-col span="6">7</qgy-col>
       </qgy-row>
     </div>

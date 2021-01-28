@@ -1,0 +1,75 @@
+.qgy-col {
+  box-sizing: border-box;
+  $class-prefix: col-;
+  @for $n from 1 through 24 {
+    &.#{$class-prefix}#{$n} {
+      width: ($n/24)*100%;
+    }
+  }
+  $offset-prefix: offset-;
+  @for $n from 1 through 24 {
+    &.#{$offset-prefix}#{$n} {
+      margin-left: ($n/24)*100%;
+    }
+  }
+  //手机响应式
+  @media (max-width: 576px) {
+    $xs-prefix-span: col-xs-;
+    @for $n from 1 through 24 {
+      &.#{$xs-prefix-span}#{$n} {
+        width:($n/24)*100%;
+      }
+    }
+    $xs-prefix-offset:offset-xs-;
+    @for $n from 1 through 24 {
+      &.#{$xs-prefix-offset}#{$n} {
+        margin-left:($n/24)*100%;
+      }
+    }
+  }
+  //平板
+  @media (min-width:577px) and (max-width: 768px) {
+    $sm-prefix-span: col-sm-;
+    @for $n from 1 through 24 {
+      &.#{$sm-prefix-span}#{$n} {
+        width:($n/24)*100%;
+      }
+    }
+    $sm-prefix-offset:offset-sm-;
+    @for $n from 1 through 24 {
+      &.#{$sm-prefix-offset}#{$n} {
+        margin-left:($n/24)*100%;
+      }
+    }
+  }
+  // 中等屏幕
+  @media (min-width:769px) and (max-width: 1200px) {
+    $md-prefix-span: col-md-;
+    @for $n from 1 through 24 {
+      &.#{$md-prefix-span}#{$n} {
+        width:($n/24)*100%;
+      }
+    }
+    $md-prefix-offset:offset-md-;
+    @for $n from 1 through 24 {
+      &.#{$md-prefix-offset}#{$n} {
+        margin-left:($n/24)*100%;
+      }
+    }
+  }
+  //大屏
+  @media (min-width:1201px){
+    $lg-prefix-span: col-lg-;
+    @for $n from 1 through 24 {
+      &.#{$lg-prefix-span}#{$n} {
+        width:($n/24)*100%;
+      }
+    }
+    $lg-prefix-offset:offset-lg-;
+    @for $n from 1 through 24 {
+      &.#{$lg-prefix-offset}#{$n} {
+        margin-left:($n/24)*100%;
+      }
+    }
+  }
+}

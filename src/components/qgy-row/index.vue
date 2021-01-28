@@ -23,8 +23,8 @@ export default {
     rowStyle() {
       let {gutter} = this;
       return {
-        marginleft: gutter / 2 + 'px',
-        marginright: gutter / 2 + 'px'
+        marginLeft: gutter / 2 + 'px',
+        marginRight: gutter / 2 + 'px'
       }
     },
     rowClass() {
@@ -48,6 +48,7 @@ export default {
 .qgy-row {
   box-sizing: border-box;
   display: flex;
+  flex-wrap: wrap;
   min-height: 60px;
 
   &-left {
