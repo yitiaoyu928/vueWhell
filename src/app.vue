@@ -42,6 +42,17 @@
       <p>这是v-model数据测试：{{text}}</p>
       <button v-on:click="changeInp">改变text</button>
     </div>
+    <div>
+      <qgy-row>
+        <qgy-col span="12"></qgy-col>
+        <qgy-col span="10"></qgy-col>
+        <qgy-col span="2"></qgy-col>
+      </qgy-row>
+      <qgy-row>
+        <qgy-col span="4"></qgy-col>
+        <qgy-col span="20"></qgy-col>
+      </qgy-row>
+    </div>
   </div>
 </template>
 <script>

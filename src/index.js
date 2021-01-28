@@ -6,6 +6,8 @@ import myTag from './components/qgy-tag/index.vue';
 import mySwitch from './components/qgy-switch/index.vue';
 import myInput from './components/qgy-input/index.vue';
 import myIcon from './components/qgy-icon/index.vue';
+import myRow from './components/qgy-row/index.vue';
+import myCol from './components/qgy-col/index.vue';
 import chai from "chai";
 Vue.component("qgy-button", myButton);
 Vue.component("qgy-link", myTextLink);
@@ -13,6 +15,8 @@ Vue.component('qgy-tag',myTag);
 Vue.component('qgy-switch',mySwitch);
 Vue.component('qgy-input',myInput);
 Vue.component('qgy-icon',myIcon);
+Vue.component('qgy-row',myRow);
+Vue.component('qgy-col',myCol);
 let vm = new Vue({
   el: "#app",
   render: function(c) {
