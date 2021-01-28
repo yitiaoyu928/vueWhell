@@ -1,5 +1,5 @@
 <template>
-  <div class="qgy-row" :style="{marginLeft:-gutter/2+'px',marginRight:-gutter/2+'px'}">
+  <div class="qgy-row" :style="rowStyle">
     <slot></slot>
   </div>
 </template>
@@ -11,6 +11,15 @@ export default {
     gutter: {
       type: String,
       default: ''
+    }
+  },
+  computed: {
+    rowStyle() {
+      let {gutter} = this;
+      return {
+        marginLeft: gutter / 2 + 'px',
+        marginRight: gutter / 2 + 'px'
+      }
     }
   },
   mounted() {

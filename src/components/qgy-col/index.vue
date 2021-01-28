@@ -1,10 +1,7 @@
 <template>
   <div :class="['qgy-col',{[`col-${span}`]:span},offset && `offset-${offset}`]"
-       :style="{paddingLeft:gutter/2+'px',paddingRight:gutter/2+'px'}">
-    <div style="border:1px solid red;height: 100%;">
-      <slot></slot>
-    </div>
-
+       :style="colStyle">
+    <slot></slot>
   </div>
 </template>
 
@@ -30,6 +27,15 @@ export default {
   data() {
     return {
       gutter: 0
+    }
+  },
+  computed: {
+    colStyle() {
+      let {gutter} = this;
+      return {
+        paddingLeft: gutter / 2 + 'px',
+        paddingRight: gutter / 2 + 'px'
+      }
     }
   }
 }

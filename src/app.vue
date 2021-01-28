@@ -44,17 +44,17 @@
     </div>
     <div>
       <qgy-row gutter="10">
-        <qgy-col span="12"></qgy-col>
-        <qgy-col span="10"></qgy-col>
-        <qgy-col span="2"></qgy-col>
+        <qgy-col span="12">1</qgy-col>
+        <qgy-col span="10">2</qgy-col>
+        <qgy-col span="2">3</qgy-col>
       </qgy-row>
       <qgy-row>
-        <qgy-col span="4" offset="2"></qgy-col>
-        <qgy-col span="10" offset="8"></qgy-col>
+        <qgy-col span="4" offset="2">4</qgy-col>
+        <qgy-col span="10" offset="8">5</qgy-col>
       </qgy-row>
       <qgy-row gutter="5">
-        <qgy-col span="4" offset="6"></qgy-col>
-        <qgy-col span="6" offset="8"></qgy-col>
+        <qgy-col span="4" offset="6">6</qgy-col>
+        <qgy-col span="6" offset="8">7</qgy-col>
       </qgy-row>
     </div>
   </div>
