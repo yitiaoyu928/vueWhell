@@ -48,7 +48,7 @@
         <qgy-col span="10">2</qgy-col>
         <qgy-col span="2">3</qgy-col>
       </qgy-row>
-      <qgy-row >
+      <qgy-row>
         <qgy-col span="4" offset="2">4</qgy-col>
         <qgy-col span="10" offset="8">5</qgy-col>
       </qgy-row>

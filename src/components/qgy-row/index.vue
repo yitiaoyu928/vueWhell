@@ -9,36 +9,36 @@ export default {
   name: "row.vue",
   props: {
     gutter: {
-      type: String,
+      type: string,
       default: ''
     },
     align: {
-      type: String,
+      type: string,
       validator(value) {
-        return ['left', 'right', 'center'].indexOf(value) !== -1;
+        return ['left', 'right', 'center'].indexof(value) !== -1;
       }
     }
   },
   computed: {
-    rowStyle() {
+    rowstyle() {
       let {gutter} = this;
       return {
-        marginLeft: gutter / 2 + 'px',
-        marginRight: gutter / 2 + 'px'
+        marginleft: gutter / 2 + 'px',
+        marginright: gutter / 2 + 'px'
       }
     },
-    rowClass() {
+    rowclass() {
       let {align} = this;
       return [
-          align && `qgy-row-${align}`
+        align && `qgy-row-${align}`
       ]
     }
   },
   mounted() {
     if (this.gutter) {
       console.log(this.$children)
-      this.$children.forEach(function (Nodes) {
-        Nodes.gutter = this.gutter;
+      this.$children.foreach(function (nodes) {
+        nodes.gutter = this.gutter;
       }.bind(this))
     }
   }
@@ -46,18 +46,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.qgy-row {
-  box-sizing: border-box;
-  display: flex;
-  min-height: 60px;
-  &-left {
-    justify-content: flex-start;
-  }
-  &-right {
-    justify-content: flex-end;
-  }
-  &-center {
-    justify-content: center;
-  }
+.qgy-row {box-sizing: border-box;display: flex;min-height: 60px;
+  &-left {justify-content: flex-start;}
+  &-right {justify-content: flex-end;}
+  &-center {justify-content: center;}
 }
 </style>
