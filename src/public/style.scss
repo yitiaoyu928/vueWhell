@@ -9,3 +9,18 @@ $successHoverColor: rgba(103,194,58,0.8);
 $dangerColor:rgba(255,73,73,1);
 $borderRadius:5px;
 $fontSize:14px;
+.qgy-col {
+  box-sizing: border-box;
+  $class-prefix:col-;
+  @for $n from 1 through 24 {
+    &.#{$class-prefix}#{$n} {
+      width:($n/24)*100%;
+    }
+  }
+  $offset-prefix:offset-;
+  @for $n from 1 through 24 {
+    &.#{$offset-prefix}#{$n} {
+      margin-left: ($n/24)*100%;
+    }
+  }
+}

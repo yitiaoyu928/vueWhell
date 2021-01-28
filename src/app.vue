@@ -43,12 +43,12 @@
       <button v-on:click="changeInp">改变text</button>
     </div>
     <div>
-      <qgy-row>
+      <qgy-row gutter="10">
         <qgy-col span="12"></qgy-col>
         <qgy-col span="10"></qgy-col>
         <qgy-col span="2"></qgy-col>
       </qgy-row>
-      <qgy-row>
+      <qgy-row gutter="20">
         <qgy-col span="4" offset="2"></qgy-col>
         <qgy-col span="10" offset="8"></qgy-col>
       </qgy-row>

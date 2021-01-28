@@ -1,12 +1,26 @@
 <template>
-  <div class="qgy-row">
-    <slot></slot>
+  <div class="qgy-row" :style="{marginLeft:-gutter/2+'px',marginRight:-gutter/2+'px'}">
+      <slot></slot>
   </div>
 </template>
 
 <script>
 export default {
-name: "row.vue"
+  name: "row.vue",
+  props: {
+    gutter: {
+      type: String,
+      default: ''
+    }
+  },
+  mounted() {
+    if(this.gutter) {
+      console.log(this.$children)
+      this.$children.forEach(function(Nodes) {
+        Nodes.gutter = this.gutter;
+      }.bind(this))
+    }
+  }
 }
 </script>
 
@@ -14,6 +28,6 @@ name: "row.vue"
 .qgy-row {
   box-sizing: border-box;
   display: flex;
-  min-height:60px;
+  min-height: 60px;
 }
 </style>
