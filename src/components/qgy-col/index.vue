@@ -1,5 +1,5 @@
 <template>
-  <div :class="['qgy-col',{[`col-${span}`]:span}]">
+  <div :class="['qgy-col',{[`col-${span}`]:span},offset && `offset-${offset}`]">
     <slot></slot>
   </div>
 </template>
@@ -17,6 +17,10 @@ name: "cols",
             return value;
           }
       }
+    },
+    offset:{
+      type:[String,Number],
+      default:''
     }
   }
 }
@@ -29,6 +33,12 @@ name: "cols",
     @for $n from 1 through 24 {
       &.#{$class-prefix}#{$n} {
         width:($n/24)*100%;
+      }
+    }
+    $offset-prefix:offset-;
+    @for $n from 1 through 24 {
+      &.#{$offset-prefix}#{$n} {
+        margin-left: ($n/24)*100%;
       }
     }
   }
