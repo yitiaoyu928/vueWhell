@@ -1,6 +1,6 @@
 <template>
   <div class="qgy-row" :style="{marginLeft:-gutter/2+'px',marginRight:-gutter/2+'px'}">
-      <slot></slot>
+    <slot></slot>
   </div>
 </template>
 
@@ -14,9 +14,9 @@ export default {
     }
   },
   mounted() {
-    if(this.gutter) {
+    if (this.gutter) {
       console.log(this.$children)
-      this.$children.forEach(function(Nodes) {
+      this.$children.forEach(function (Nodes) {
         Nodes.gutter = this.gutter;
       }.bind(this))
     }

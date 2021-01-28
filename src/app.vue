@@ -39,7 +39,7 @@
       <qgy-input name="sss" text="只读" read-only value="Seven fish"></qgy-input>
       <qgy-input name="qgy" text="错误" :error="true" error-message="信息错误"></qgy-input>
       <qgy-input name="qgy" text="正确" v-model="text" :success="true" success-message="信息正确"></qgy-input>
-      <p>这是v-model数据测试：{{text}}</p>
+      <p>这是v-model数据测试：{{ text }}</p>
       <button v-on:click="changeInp">改变text</button>
     </div>
     <div>
@@ -48,9 +48,13 @@
         <qgy-col span="10"></qgy-col>
         <qgy-col span="2"></qgy-col>
       </qgy-row>
-      <qgy-row gutter="20">
+      <qgy-row>
         <qgy-col span="4" offset="2"></qgy-col>
         <qgy-col span="10" offset="8"></qgy-col>
+      </qgy-row>
+      <qgy-row gutter="5">
+        <qgy-col span="4" offset="6"></qgy-col>
+        <qgy-col span="6" offset="8"></qgy-col>
       </qgy-row>
     </div>
   </div>
@@ -68,8 +72,7 @@ export default {
       this.loading1 = !this.loading1;
     },
     changeInp() {
-      this.text=Math.random(1,1000);
-
+      this.text = Math.random(1, 1000);
     }
   },
 };

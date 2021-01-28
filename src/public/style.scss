@@ -1,23 +1,23 @@
-$defaultColor:rgba(215, 215, 215,0.8);
-$defaultHoverColor:rgba(85, 85, 85,1);
+$defaultColor: rgba(215, 215, 215, 0.8);
+$defaultHoverColor: rgba(85, 85, 85, 1);
 
-$primaryColor:rgb(99,176,255,1);
-$primaryHoverColor:rgba(99,176,255,0.8);
+$primaryColor: rgb(99, 176, 255, 1);
+$primaryHoverColor: rgba(99, 176, 255, 0.8);
 
-$successColor:rgb(103,194,58);
-$successHoverColor: rgba(103,194,58,0.8);
-$dangerColor:rgba(255,73,73,1);
-$borderRadius:5px;
-$fontSize:14px;
+$successColor: rgb(103, 194, 58);
+$successHoverColor: rgba(103, 194, 58, 0.8);
+$dangerColor: rgba(255, 73, 73, 1);
+$borderRadius: 5px;
+$fontSize: 14px;
 .qgy-col {
   box-sizing: border-box;
-  $class-prefix:col-;
+  $class-prefix: col-;
   @for $n from 1 through 24 {
     &.#{$class-prefix}#{$n} {
-      width:($n/24)*100%;
+      width: ($n/24)*100%;
     }
   }
-  $offset-prefix:offset-;
+  $offset-prefix: offset-;
   @for $n from 1 through 24 {
     &.#{$offset-prefix}#{$n} {
       margin-left: ($n/24)*100%;
