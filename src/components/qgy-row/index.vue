@@ -9,25 +9,25 @@ export default {
   name: "row.vue",
   props: {
     gutter: {
-      type: string,
+      type: String,
       default: ''
     },
     align: {
-      type: string,
+      type: String,
       validator(value) {
-        return ['left', 'right', 'center'].indexof(value) !== -1;
+        return ['left', 'right', 'center'].indexOf(value) !== -1;
       }
     }
   },
   computed: {
-    rowstyle() {
+    rowStyle() {
       let {gutter} = this;
       return {
         marginleft: gutter / 2 + 'px',
         marginright: gutter / 2 + 'px'
       }
     },
-    rowclass() {
+    rowClass() {
       let {align} = this;
       return [
         align && `qgy-row-${align}`
@@ -36,8 +36,7 @@ export default {
   },
   mounted() {
     if (this.gutter) {
-      console.log(this.$children)
-      this.$children.foreach(function (nodes) {
+      this.$children.forEach(function (nodes) {
         nodes.gutter = this.gutter;
       }.bind(this))
     }
@@ -46,9 +45,21 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.qgy-row {box-sizing: border-box;display: flex;min-height: 60px;
-  &-left {justify-content: flex-start;}
-  &-right {justify-content: flex-end;}
-  &-center {justify-content: center;}
+.qgy-row {
+  box-sizing: border-box;
+  display: flex;
+  min-height: 60px;
+
+  &-left {
+    justify-content: flex-start;
+  }
+
+  &-right {
+    justify-content: flex-end;
+  }
+
+  &-center {
+    justify-content: center;
+  }
 }
 </style>
