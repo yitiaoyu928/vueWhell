@@ -109,7 +109,6 @@ export default {
         classStyle.push(...returnSm)
       }
       if (returnMd) {
-        console.log(returnMd)
         classStyle.push(...returnMd)
       }
       if (returnLg) {
