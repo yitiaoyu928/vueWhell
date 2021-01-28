@@ -1,5 +1,5 @@
 <template>
-  <div class="qgy-row" :style="rowStyle">
+  <div class="qgy-row" :style="rowStyle" :class="rowClass">
     <slot></slot>
   </div>
 </template>
@@ -11,6 +11,12 @@ export default {
     gutter: {
       type: String,
       default: ''
+    },
+    align: {
+      type: String,
+      validator(value) {
+        return ['left', 'right', 'center'].indexOf(value) !== -1;
+      }
     }
   },
   computed: {
@@ -20,6 +26,12 @@ export default {
         marginLeft: gutter / 2 + 'px',
         marginRight: gutter / 2 + 'px'
       }
+    },
+    rowClass() {
+      let {align} = this;
+      return [
+          align && `qgy-row-${align}`
+      ]
     }
   },
   mounted() {
@@ -38,5 +50,14 @@ export default {
   box-sizing: border-box;
   display: flex;
   min-height: 60px;
+  &-left {
+    justify-content: flex-start;
+  }
+  &-right {
+    justify-content: flex-end;
+  }
+  &-center {
+    justify-content: center;
+  }
 }
 </style>

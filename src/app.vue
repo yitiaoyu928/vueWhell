@@ -48,13 +48,13 @@
         <qgy-col span="10">2</qgy-col>
         <qgy-col span="2">3</qgy-col>
       </qgy-row>
-      <qgy-row>
+      <qgy-row >
         <qgy-col span="4" offset="2">4</qgy-col>
         <qgy-col span="10" offset="8">5</qgy-col>
       </qgy-row>
-      <qgy-row gutter="5">
-        <qgy-col span="4" offset="6">6</qgy-col>
-        <qgy-col span="6" offset="8">7</qgy-col>
+      <qgy-row gutter="5" align="center">
+        <qgy-col span="4">6</qgy-col>
+        <qgy-col span="6">7</qgy-col>
       </qgy-row>
     </div>
   </div>
