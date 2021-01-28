@@ -26,6 +26,7 @@ let validaType = (value) => {
     throw new TypeError('If you want to use offset, then you should pass offset an integer value');
   }
 }
+// 添加样式
 let addType = (value, name) => {
   if (typeof name !== 'string') {
     throw new TypeError('The name argument should be passed in as a string');
