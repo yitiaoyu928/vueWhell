@@ -1,13 +1,17 @@
 <template>
-
+  <div class="qgy-footer">
+    <slot></slot>
+  </div>
 </template>
 
 <script>
 export default {
-  name: "index"
+  name:'qgy-footer'
 }
 </script>
 
-<style scoped>
-
+<style lang="scss" scoped>
+.qgy-footer {
+  min-height:60px;
+}
 </style>

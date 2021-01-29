@@ -57,6 +57,18 @@
         <qgy-col span="6">7</qgy-col>
       </qgy-row>
     </div>
+    <div>
+      <qgy-layout>
+        <qgy-header>头部</qgy-header>
+        <qgy-layout>
+          <qgy-sider>sider</qgy-sider>
+          <qgy-content>
+            内容
+          </qgy-content>
+        </qgy-layout>
+        <qgy-footer>footer</qgy-footer>
+      </qgy-layout>
+    </div>
   </div>
 </template>
 <script>

@@ -8,18 +8,29 @@ import myInput from './components/qgy-input/index.vue';
 import myIcon from './components/qgy-icon/index.vue';
 import myRow from './components/qgy-row/index.vue';
 import myCol from './components/qgy-col/index.vue';
+import myLayout from './components/qgy-layout/index.vue';
+import mySider from './components/qgy-sider/index.vue';
+import myHeader from './components/qgy-header/index.vue';
+import myFooter from './components/qgy-footer/index.vue';
+import myContent from './components/qgy-content/index.vue';
 import chai from "chai";
+
 Vue.component("qgy-button", myButton);
 Vue.component("qgy-link", myTextLink);
-Vue.component('qgy-tag',myTag);
-Vue.component('qgy-switch',mySwitch);
-Vue.component('qgy-input',myInput);
-Vue.component('qgy-icon',myIcon);
-Vue.component('qgy-row',myRow);
-Vue.component('qgy-col',myCol);
+Vue.component('qgy-tag', myTag);
+Vue.component('qgy-switch', mySwitch);
+Vue.component('qgy-input', myInput);
+Vue.component('qgy-icon', myIcon);
+Vue.component('qgy-row', myRow);
+Vue.component('qgy-col', myCol);
+Vue.component('qgy-layout', myLayout);
+Vue.component('qgy-header', myHeader);
+Vue.component('qgy-footer', myFooter);
+Vue.component('qgy-sider', mySider);
+Vue.component('qgy-content', myContent);
 let vm = new Vue({
   el: "#app",
-  render: function(c) {
+  render: function (c) {
     return c(app);
   },
 });
@@ -29,8 +40,8 @@ let expect = chai.expect;
   // 测试图标的样式
   let Constructor = Vue.extend(myButton);
   let button_test = new Constructor({
-    propsData:{
-      iconClass:'iconfont icon-download'
+    propsData: {
+      iconClass: 'iconfont icon-download'
     }
   });
   button_test.$mount();
@@ -45,9 +56,9 @@ let expect = chai.expect;
   // 测试图标的order
   let Constructor = Vue.extend(myButton);
   let button_test = new Constructor({
-    propsData:{
-      iconClass:'iconfont icon-download',
-      iconDirection:'right'
+    propsData: {
+      iconClass: 'iconfont icon-download',
+      iconDirection: 'right'
     }
   }).$mount('#test');
   let button_i = button_test.$el.querySelector('i');
@@ -62,11 +73,11 @@ let expect = chai.expect;
   // 测试点击事件
   let Constructor = Vue.extend(myButton);
   let button_test = new Constructor({
-    propsData:{
-      iconClass:'iconfont icon-download'
+    propsData: {
+      iconClass: 'iconfont icon-download'
     }
   }).$mount();
-  button_test.$on('click',()=>{
+  button_test.$on('click', () => {
     expect(1).to.equal(1);
   });
   button_test.$el.click();
