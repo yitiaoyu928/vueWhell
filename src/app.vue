@@ -89,11 +89,11 @@ export default {
     },
     show() {
       this.$toast({
-        // message:'hello hello worldhello worldhellohello orldworldello worldworld worldhello worldhellohello orldworldello worldworld worldhello worldhellohello orldworldello worldworld worldhello worldhellohello orldworldello worldworld worldhello worldhellohello orldworldello worldworld' ,
-        message:'111',
-        position:'top',
+        message:'hello hello worldhello worldhellohello orldworldello worldworld worldhello worldhellohello orldworldello worldworld worldhello worldhellohello orldworldello worldworld worldhello worldhellohello orldworldello worldworld worldhello worldhellohello orldworldello worldworld' ,
+        position:'middle',
         duration:-1,
-        close:true
+        close:true,
+        full:false
       });
     }
   },

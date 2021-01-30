@@ -1,8 +1,8 @@
 <template>
-  <div class="qgy-toast" :class="[position]">
+  <div class="qgy-toast" :class="[position,{'full':full}]">
     <span class="message" v-text="message"></span>
     <span class="line" ref="line"></span>
-    <span class="close" v-if="close" @click="hide" v-text="closeText"> </span>
+    <span class="close" v-if="close" @click="hide" v-text="closeText" ref="close"></span>
   </div>
 </template>
 
@@ -18,13 +18,19 @@ export default {
     },
     position: {
       type: String,
-      default: 'bottom'
+      default: 'bottom',
+      validator(value) {
+        return ['top', 'middle', 'bottom'].indexOf(value) !== -1;
+      }
     },
     closeText: {
       type: String
     },
     callback: {
       type: Function,
+    },
+    full:{
+      type:Boolean
     }
   },
   methods: {
@@ -35,8 +41,10 @@ export default {
     }
   },
   mounted() {
-    this.$nextTick(()=>{
-      this.$refs.line.style.height = this.$el.getBoundingClientRect().height+'px';
+    this.$nextTick(() => {
+      this.$refs.line.style.height = this.$el.getBoundingClientRect().height + 'px';
+      this.$refs.close.style.height = this.$el.getBoundingClientRect().height + 'px';
+      this.$refs.close.style.lineHeight = this.$el.getBoundingClientRect().height + 'px';
     });
   }
 }
@@ -45,14 +53,17 @@ export default {
 <style lang="scss" scoped>
 $fontSize: 14px;
 .qgy-toast {
-  width: 100%;
+  &.full  {
+    width: 100%;
+  }
+
   display: flex;
   justify-content: center;
   align-items: center;
   position: fixed;
   z-index: 99999;
   font-size: $fontSize;
-  min-height:30px;
+  min-height: 30px;
   line-height: 1.5;
   background-color: rgb(127, 140, 141);
   border-radius: 5px;
@@ -60,6 +71,7 @@ $fontSize: 14px;
   box-shadow: 0 1px 3px #404040;
   color: rgb(236, 240, 241);
   text-align: center;
+
   &.bottom {
     left: 50%;
     bottom: 0;
@@ -72,24 +84,28 @@ $fontSize: 14px;
     transform: translateX(-50%);
   }
 
-  &.center {
+  &.middle {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
+
   .line {
     border-left: 1px solid #ccc;
     margin: 0 5px;
     background-color: rgb(189, 195, 199);
   }
+
   .message {
-    padding: 0 10px;
+    padding: 3px 10px;
     flex-grow: 9;
   }
+
   .close {
     flex-grow: 1;
     cursor: pointer;
-    min-width:60px;
+    min-width: 60px;
   }
 }
+
 </style>
