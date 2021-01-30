@@ -36,4 +36,5 @@
 + close:是否显示关闭按钮，默认为false
 + position:消息显示的位置，有top,bottom,middle,默认为bottom
 + closeText:关闭按钮的文本
-+ callback:回调函数，可在点击关闭按钮后触发
++ callback:回调函数，可在点击关闭按钮后触发，
++ full:是否占据整个屏幕宽度
