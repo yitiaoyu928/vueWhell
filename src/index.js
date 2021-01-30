@@ -13,6 +13,10 @@ import mySider from './components/qgy-sider/index.vue';
 import myHeader from './components/qgy-header/index.vue';
 import myFooter from './components/qgy-footer/index.vue';
 import myContent from './components/qgy-content/index.vue';
+import myToast from './components/qgy-toast/toast.vue';
+// 引入Toast插件
+import toast from './components/qgy-toast/toastPlugin.js';
+Vue.use(toast);
 import chai from "chai";
 
 Vue.component("qgy-button", myButton);
@@ -28,11 +32,17 @@ Vue.component('qgy-header', myHeader);
 Vue.component('qgy-footer', myFooter);
 Vue.component('qgy-sider', mySider);
 Vue.component('qgy-content', myContent);
+Vue.component('qgy-toast', myToast);
 let vm = new Vue({
   el: "#app",
   render: function (c) {
     return c(app);
   },
+  created() {
+    this.$toast({
+      message:'hello world'
+    });
+  }
 });
 // 单元测试
 let expect = chai.expect;
