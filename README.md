@@ -29,3 +29,11 @@
 + md:中等PC屏幕上元素占据大小,769px>且<1200px
 + lg:超大PC屏幕上元素占据大小,>1200px
 + 以上四个接受一个对象,对象内有span和offset两个属性
+## 添加```<qgy-layout>``````<qgy-header>``````<qgy-sider>``````<qgy-content>``````<qgy-footer>```组件
+## ```Toast```组件
++ message:显示的信息，默认为空
++ duration:多少秒以后关闭，默认为3000ms
++ close:是否显示关闭按钮，默认为false
++ position:消息显示的位置，有top,bottom,center,默认为bottom
++ closeText:关闭按钮的文本
++ callback:回调函数，可在点击关闭按钮后触发

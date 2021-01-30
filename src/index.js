@@ -37,11 +37,6 @@ let vm = new Vue({
   el: "#app",
   render: function (c) {
     return c(app);
-  },
-  created() {
-    this.$toast({
-      message:'hello world'
-    });
   }
 });
 // 单元测试

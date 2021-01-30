@@ -69,6 +69,7 @@
         <qgy-footer>footer</qgy-footer>
       </qgy-layout>
     </div>
+    <div @click="show">click me</div>
   </div>
 </template>
 <script>
@@ -85,6 +86,14 @@ export default {
     },
     changeInp() {
       this.text = Math.random(1, 1000);
+    },
+    show() {
+      this.$toast({
+        message:'hello hello worldhello worldhellohello orldworldello worldworld' ,
+        position:'top',
+        duration:-1,
+        close:true
+      });
     }
   },
 };
