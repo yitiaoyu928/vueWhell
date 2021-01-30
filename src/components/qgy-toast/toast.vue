@@ -1,8 +1,10 @@
 <template>
-  <div class="qgy-toast" :class="[position,{'full':full}]">
-    <span class="message" v-text="message"></span>
-    <span class="line" ref="line"></span>
-    <span class="close" v-if="close" @click="hide" v-text="closeText" ref="close"></span>
+  <div class="box" :class="[position]">
+    <div class="qgy-toast" :class="{'full':full}">
+      <span class="message" v-text="message"></span>
+      <span class="line" ref="line"></span>
+      <span class="close" v-if="close" @click="hide" v-text="closeText" ref="close"></span>
+    </div>
   </div>
 </template>
 
@@ -29,8 +31,8 @@ export default {
     callback: {
       type: Function,
     },
-    full:{
-      type:Boolean
+    full: {
+      type: Boolean
     }
   },
   methods: {
@@ -52,16 +54,74 @@ export default {
 
 <style lang="scss" scoped>
 $fontSize: 14px;
-.qgy-toast {
-  &.full  {
-    width: 100%;
+$animation-time:300ms;
+//属性名含有bottom动画
+@keyframes fade-slide-up {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+//属性名含有top动画
+@keyframes fade-slide-down {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+//属性名含有middle动画
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.box {
+  position: fixed;
+  z-index: 99999;
+  left: 50%;
+  transform: translateX(-50%);
+  &.bottom {
+    bottom: 0;
+    .qgy-toast {
+      border-bottom-left-radius: 0px;
+      border-bottom-right-radius: 0px;
+      animation: fade-slide-up $animation-time;
+    }
   }
 
+  &.top {
+    top: 0;
+    .qgy-toast {
+      border-top-left-radius: 0px;
+      border-top-right-radius: 0px;
+      animation: fade-slide-down $animation-time;
+    }
+  }
+
+  &.middle {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: fade-in $animation-time;
+  }
+}
+
+.qgy-toast {
+  &.full {
+    width: 100%;
+  }
   display: flex;
   justify-content: center;
   align-items: center;
-  position: fixed;
-  z-index: 99999;
   font-size: $fontSize;
   min-height: 30px;
   line-height: 1.5;
@@ -71,25 +131,10 @@ $fontSize: 14px;
   box-shadow: 0 1px 3px #404040;
   color: rgb(236, 240, 241);
   text-align: center;
-
-  &.bottom {
-    left: 50%;
-    bottom: 0;
-    transform: translateX(-50%);
-  }
-
-  &.top {
-    left: 50%;
-    top: 0;
-    transform: translateX(-50%);
-  }
-
-  &.middle {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
   .line {
     border-left: 1px solid #ccc;
     margin: 0 5px;

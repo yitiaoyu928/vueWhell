@@ -1,5 +1,4 @@
 import Toast from './toast.vue';
-
 export default {
   install(Vue, options) {
     Vue.prototype.$toast = function (options = {}) {
@@ -33,11 +32,10 @@ export default {
         setTimeout(() => {
           toast.$el.remove();
           toast.$destroy();
-        }, $options.duration)
+        }, $options.duration);
       } else if ($options.duration === -1 && !$options.close) {
         console.error('duration and close must be passed either way, or Toast will not be closed')
       }
-
     }
   }
 }
