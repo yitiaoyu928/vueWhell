@@ -1,7 +1,7 @@
 <template>
   <div class="qgy-toast" :class="[position]">
     <span class="message" v-text="message"></span>
-    <span class="line"></span>
+    <span class="line" ref="line"></span>
     <span class="close" v-if="close" @click="hide" v-text="closeText"> </span>
   </div>
 </template>
@@ -33,14 +33,17 @@ export default {
       this.$destroy();
       this.callback && this.callback();
     }
+  },
+  mounted() {
+    this.$nextTick(()=>{
+      this.$refs.line.style.height = this.$el.getBoundingClientRect().height+'px';
+    });
   }
 }
 </script>
 
 <style lang="scss" scoped>
 $fontSize: 14px;
-$height: 30px;
-$line-height: $height;
 .qgy-toast {
   width: 100%;
   display: flex;
@@ -49,7 +52,8 @@ $line-height: $height;
   position: fixed;
   z-index: 99999;
   font-size: $fontSize;
-  height: $height;
+  min-height:30px;
+  line-height: 1.5;
   background-color: rgb(127, 140, 141);
   border-radius: 5px;
   overflow: hidden;
@@ -74,19 +78,14 @@ $line-height: $height;
     transform: translate(-50%, -50%);
   }
   .line {
-    width: 1px;
-    height: 100%;
+    border-left: 1px solid #ccc;
     margin: 0 5px;
     background-color: rgb(189, 195, 199);
   }
-  .message,.close {
-    height: 100%;
-    line-height: 30px;
-  }
-  &>.message {
+  .message {
+    padding: 0 10px;
     flex-grow: 9;
   }
-
   .close {
     flex-grow: 1;
     cursor: pointer;

@@ -13,7 +13,6 @@ export default {
     for(let key in options) {
       $options[key] = options[key];
     }
-    console.log($options)
     let Constructor = Vue.extend(Toast);
     let toast = new Constructor({
       propsData:{

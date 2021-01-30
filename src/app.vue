@@ -89,7 +89,8 @@ export default {
     },
     show() {
       this.$toast({
-        message:'hello hello worldhello worldhellohello orldworldello worldworld' ,
+        // message:'hello hello worldhello worldhellohello orldworldello worldworld worldhello worldhellohello orldworldello worldworld worldhello worldhellohello orldworldello worldworld worldhello worldhellohello orldworldello worldworld worldhello worldhellohello orldworldello worldworld' ,
+        message:'111',
         position:'top',
         duration:-1,
         close:true
