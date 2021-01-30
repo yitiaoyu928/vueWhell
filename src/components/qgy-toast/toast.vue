@@ -1,9 +1,10 @@
 <template>
-  <div class="qgy-toast top">
-  <span class="message">
-    <slot></slot>
+  <div class="qgy-toast" :class="[position]">
+  <span class="message" v-text="message">
+<!--    <slot></slot>-->
+
   </span>
-    <span class="close">
+    <span class="close" v-if="close" @click="hide">
     关闭
   </span>
   </div>
@@ -13,7 +14,21 @@
 export default {
   name: "toast",
   props:{
-
+    message:{
+      type:String
+    },
+    close:{
+      type:Boolean
+    },
+    position:{
+      type:String,
+      default:'bottom'
+    }
+  },
+  methods:{
+    hide() {
+     this.$el.remove()
+    }
   }
 }
 </script>
