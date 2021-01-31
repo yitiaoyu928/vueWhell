@@ -70,6 +70,10 @@
       </qgy-layout>
     </div>
     <div @click="show">click me</div>
+    <div>
+      <qgy-progress :percentage="percentage" type="default"></qgy-progress>
+      <button @click="peradd">add</button>
+    </div>
   </div>
 </template>
 <script>
@@ -77,7 +81,8 @@ export default {
   data() {
     return {
       loading1: false,
-      text: "hi"
+      text: "hi",
+      percentage:10
     };
   },
   methods: {
@@ -95,6 +100,9 @@ export default {
         close:true,
         full:false
       });
+    },
+    peradd() {
+      this.percentage+=10;
     }
   },
 };

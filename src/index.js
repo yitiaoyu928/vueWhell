@@ -14,6 +14,7 @@ import myHeader from './components/qgy-header/index.vue';
 import myFooter from './components/qgy-footer/index.vue';
 import myContent from './components/qgy-content/index.vue';
 import myToast from './components/qgy-toast/toast.vue';
+import myProgress from './components/qgy-progress/progress.vue';
 // 引入Toast插件
 import toast from './components/qgy-toast/toastPlugin.js';
 Vue.use(toast);
@@ -33,6 +34,7 @@ Vue.component('qgy-footer', myFooter);
 Vue.component('qgy-sider', mySider);
 Vue.component('qgy-content', myContent);
 Vue.component('qgy-toast', myToast);
+Vue.component('qgy-progress', myProgress);
 let vm = new Vue({
   el: "#app",
   render: function (c) {
