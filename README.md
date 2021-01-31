@@ -38,3 +38,6 @@
 + closeText:关闭按钮的文本
 + callback:回调函数，可在点击关闭按钮后触发，
 + full:是否占据整个屏幕宽度
+## ```<qgy-progress>```组件
++ percentage:[string,number]类型，用于决定进度条的多少
++ type:string类型,进度条类型，可选值有defaultm,primary,success，默认为default
