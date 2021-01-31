@@ -13,10 +13,11 @@ import mySider from './components/qgy-sider/index.vue';
 import myHeader from './components/qgy-header/index.vue';
 import myFooter from './components/qgy-footer/index.vue';
 import myContent from './components/qgy-content/index.vue';
-import myToast from './components/qgy-toast/toast.vue';
 import myProgress from './components/qgy-progress/progress.vue';
+import myTab from './components/qgy-tab/tab.vue';
+import myTabItem from './components/qgy-tab-item/tab-item.vue';
 // 引入Toast插件
-import toast from './components/qgy-toast/toastPlugin.js';
+import toast from './components/qgy-toast';
 Vue.use(toast);
 import chai from "chai";
 
@@ -33,8 +34,9 @@ Vue.component('qgy-header', myHeader);
 Vue.component('qgy-footer', myFooter);
 Vue.component('qgy-sider', mySider);
 Vue.component('qgy-content', myContent);
-Vue.component('qgy-toast', myToast);
 Vue.component('qgy-progress', myProgress);
+Vue.component('qgy-tab', myTab);
+Vue.component('qgy-tab-item', myTabItem);
 let vm = new Vue({
   el: "#app",
   render: function (c) {

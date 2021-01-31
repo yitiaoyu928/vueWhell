@@ -72,8 +72,19 @@
     <div @click="show">click me</div>
     <div>
       <qgy-progress :percentage="percentage" type="default"></qgy-progress>
+      <qgy-progress :percentage="percentage" type="primary"></qgy-progress>
+      <qgy-progress :percentage="percentage" type="success"></qgy-progress>
       <button @click="peradd">add</button>
+      <button @click="perminus">minus</button>
     </div>
+    <div>
+      <qgy-tab>
+        <qgy-tab-item>1</qgy-tab-item>
+        <qgy-tab-item>2</qgy-tab-item>
+        <qgy-tab-item>3</qgy-tab-item>
+      </qgy-tab>
+    </div>
+
   </div>
 </template>
 <script>
@@ -82,7 +93,7 @@ export default {
     return {
       loading1: false,
       text: "hi",
-      percentage:10
+      percentage: 10
     };
   },
   methods: {
@@ -94,15 +105,18 @@ export default {
     },
     show() {
       this.$toast({
-        message:'hello hello worldhello worldhellohello orldworldello worldworld worldhello worldhellohello orldworldello worldworld worldhello worldhellohello orldworldello worldworld worldhello worldhellohello orldworldello worldworld worldhello worldhellohello orldworldello worldworld' ,
-        position:'middle',
-        duration:-1,
-        close:true,
-        full:false
+        message: 'hello hello worldhello worldhellohello orldworldello worldworld worldhello worldhellohello orldworldello worldworld worldhello worldhellohello orldworldello worldworld worldhello worldhellohello orldworldello worldworld worldhello worldhellohello orldworldello worldworld',
+        position: 'middle',
+        duration: -1,
+        close: true,
+        full: false
       });
     },
     peradd() {
-      this.percentage+=10;
+      this.percentage += 10;
+    },
+    perminus() {
+      this.percentage -= 10;
     }
   },
 };
