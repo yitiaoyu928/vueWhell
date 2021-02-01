@@ -20,7 +20,7 @@ export default {
     }
   },
   created() {
-    this.eventBus.$on('update:selected', (name) => {
+    this.eventBus.$on('update:selected', (name,vm) => {
       if (this.name === name) {
         this.active = true;
       } else {
@@ -30,7 +30,7 @@ export default {
   },
   methods: {
     xxx() {
-      this.eventBus.$emit('update:selected', this.name)
+      this.eventBus.$emit('update:selected', this.name,this)
     }
   },
   computed: {
@@ -50,9 +50,9 @@ export default {
   flex-shrink: 0;
   padding: 0 2rem;
   cursor: pointer;
-
   &.active {
-    border-bottom: 1px solid lightblue;
+    color: rgb(99, 176, 255, 1);
+    font-weight: 600;
   }
 }
 </style>
