@@ -35,11 +35,10 @@ export default {
       let {offsetWidth, offsetLeft, offsetTop, offsetHeight} = vm.$el;
       this.$refs.line.style.width = offsetWidth + 'px';
       if (this.direction === 'vertical') {
-        this.$refs.line.style.transform = `translateY(${offsetTop+offsetHeight}px)`;
+        this.$refs.line.style.transform = `translateY(${offsetTop + offsetHeight}px)`;
       } else {
         this.$refs.line.style.transform = `translateX(${offsetLeft}px)`;
       }
-
     });
 
 
@@ -64,14 +63,16 @@ export default {
 
   &.horizontal {
     flex-direction: row;
-    >.line {
+
+    > .line {
       bottom: 0;
     }
   }
 
   &.vertical {
     flex-direction: column;
-    >.line {
+
+    > .line {
       top: 0;
     }
   }

@@ -14,9 +14,9 @@ export default {
       type: String,
       required: true
     },
-    icon:{
-      type:String,
-      default:''
+    icon: {
+      type: String,
+      default: ''
     }
   },
   data() {
@@ -25,7 +25,7 @@ export default {
     }
   },
   created() {
-    this.eventBus.$on('update:selected', (name,vm) => {
+    this.eventBus.$on('update:selected', (name, vm) => {
       if (this.name === name) {
         this.active = true;
       } else {
@@ -35,7 +35,7 @@ export default {
   },
   methods: {
     xxx() {
-      this.eventBus.$emit('update:selected', this.name,this)
+      this.eventBus.$emit('update:selected', this.name, this)
     }
   },
   computed: {
@@ -55,6 +55,7 @@ export default {
   flex-shrink: 0;
   padding: 0 2rem;
   cursor: pointer;
+
   &.active {
     color: rgb(99, 176, 255, 1);
     font-weight: 600;

@@ -67,5 +67,5 @@
 + selected:选中的是哪个tab,必须传入String类型的值
 
 ## ```<qgy-tab-item>```组件
-
 + name：tab-item的名称，必须传入String类型
++ icon:给tab-item添加图标，string类型
