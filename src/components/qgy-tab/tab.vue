@@ -1,5 +1,5 @@
 <template>
-  <div class="qgy-tab" :class="[direction]">
+  <div class="qgy-tab" :class="[direction]" :selected.sync="selected" @update:selected="fn">
     <slot></slot>
     <div class="line" ref="line"></div>
   </div>
@@ -18,6 +18,9 @@ export default {
     selected: {
       type: String,
       required: true
+    },
+    fn:{
+      type:Function
     }
   },
   data() {

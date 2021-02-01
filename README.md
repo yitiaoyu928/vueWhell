@@ -65,6 +65,7 @@
 
 + direction：是横向排列还是纵向排列,horizontal和vertical，默认为horizontal
 + selected:选中的是哪个tab,必须传入String类型的值
++ fn:tab的函数事件
 
 ## ```<qgy-tab-item>```组件
 + name：tab-item的名称，必须传入String类型

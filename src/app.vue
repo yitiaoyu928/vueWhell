@@ -1,9 +1,9 @@
 <template>
   <div>
     <div>
-      <qgy-tab :selected.sync="selected" @update:selected="xxx">
-        <qgy-tab-item name="p" icon="iconfont icon-loading">1</qgy-tab-item>
-        <qgy-tab-item name="x">2</qgy-tab-item>
+      <qgy-tab :selected="selected" :fn="xxx">
+        <qgy-tab-item name="a" icon="iconfont icon-loading">1</qgy-tab-item>
+        <qgy-tab-item name="b">2</qgy-tab-item>
         <qgy-tab-item name="c">3</qgy-tab-item>
       </qgy-tab>
     </div>
@@ -13,7 +13,7 @@
 export default {
   data() {
     return {
-      selected:'p'
+      selected:'b'
     }
   },
   methods: {
