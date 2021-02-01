@@ -6,30 +6,31 @@
 
 <script>
 import Vue from 'vue';
+
 export default {
   name: "tab",
-  props:{
-    direction:{
-      type:String,
-      default:"horizontal"
+  props: {
+    direction: {
+      type: String,
+      default: "horizontal"
     },
-    selected:{
-      type:String,
-      required:true
+    selected: {
+      type: String,
+      required: true
     }
   },
   data() {
     return {
-      eventBus:new Vue()
+      eventBus: new Vue()
     }
   },
   provide() {
     return {
-      eventBus:this.eventBus
+      eventBus: this.eventBus
     }
   },
   mounted() {
-    this.eventBus.$emit('update:selected',this.selected);
+    this.eventBus.$emit('update:selected', this.selected);
   }
 }
 </script>
@@ -39,9 +40,11 @@ export default {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+
   &.horizontal {
     flex-direction: row;
   }
+
   &.vertical {
     flex-direction: column;
   }
