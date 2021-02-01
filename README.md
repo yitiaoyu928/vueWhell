@@ -41,3 +41,8 @@
 ## ```<qgy-progress>```组件
 + percentage:[string,number]类型，用于决定进度条的多少
 + type:string类型,进度条类型，可选值有defaultm,primary,success，默认为default
+## ```<qgy-tab>```组件
++ direction：是横向排列还是纵向排列,horizontal和vertical，默认为horizontal
++ selected:选中的是哪个tab,必须传入String类型的值
+## ```<qgy-tab-item>```组件
++ name：tab-item的名称，必须传入String类型
