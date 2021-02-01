@@ -1,5 +1,6 @@
 <template>
   <div class="tab-item" @click="xxx" :class="activeClass">
+    <qgy-icon :icon="icon" v-if="icon"></qgy-icon>
     <slot></slot>
   </div>
 </template>
@@ -12,6 +13,10 @@ export default {
     name: {
       type: String,
       required: true
+    },
+    icon:{
+      type:String,
+      default:''
     }
   },
   data() {

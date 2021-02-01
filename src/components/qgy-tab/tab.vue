@@ -32,15 +32,20 @@ export default {
   },
   created() {
     this.eventBus.$on('update:selected', (name, vm) => {
-      let {offsetWidth, offsetLeft} = vm.$el;
+      let {offsetWidth, offsetLeft, offsetTop, offsetHeight} = vm.$el;
       this.$refs.line.style.width = offsetWidth + 'px';
-      this.$refs.line.style.transform = `translateX(${offsetLeft}px)`;
+      if (this.direction === 'vertical') {
+        this.$refs.line.style.transform = `translateY(${offsetTop+offsetHeight}px)`;
+      } else {
+        this.$refs.line.style.transform = `translateX(${offsetLeft}px)`;
+      }
+
     });
 
 
   },
   mounted() {
-    this.$children.forEach(item => {
+    this.$children.forEach((item) => {
       if (item.name === this.selected) {
         this.eventBus.$emit('update:selected', this.selected, item);
       }
@@ -59,15 +64,20 @@ export default {
 
   &.horizontal {
     flex-direction: row;
+    >.line {
+      bottom: 0;
+    }
   }
 
   &.vertical {
     flex-direction: column;
+    >.line {
+      top: 0;
+    }
   }
 
   .line {
     position: absolute;
-    bottom: 0;
     border-bottom: 3px solid lightblue;
     transition: transform 0.3s;
   }
