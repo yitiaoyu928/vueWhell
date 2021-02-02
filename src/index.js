@@ -16,6 +16,7 @@ import myContent from './components/qgy-content/index.vue';
 import myProgress from './components/qgy-progress/progress.vue';
 import myTab from './components/qgy-tab/tab.vue';
 import myTabItem from './components/qgy-tab-item/tab-item.vue';
+import myPopover from './components/qgy-popover/popover.vue';
 // 引入Toast插件
 import toast from './components/qgy-toast';
 Vue.use(toast);
@@ -37,6 +38,7 @@ Vue.component('qgy-content', myContent);
 Vue.component('qgy-progress', myProgress);
 Vue.component('qgy-tab', myTab);
 Vue.component('qgy-tab-item', myTabItem);
+Vue.component('qgy-popover', myPopover);
 let vm = new Vue({
   el: "#app",
   render: function (c) {

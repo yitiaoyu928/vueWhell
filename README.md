@@ -59,7 +59,7 @@
 ## ```<qgy-progress>```组件
 
 + percentage:[string,number]类型，用于决定进度条的多少
-+ type:string类型,进度条类型，可选值有defaultm,primary,success，默认为default
++ type:string类型,进度条类型，可选值有default,primary,success，默认为default
 
 ## ```<qgy-tab>```组件
 
