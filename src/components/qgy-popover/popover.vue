@@ -1,5 +1,5 @@
 <template>
-  <div class="qgy-popover" @click.stop="xxx">
+  <div class="qgy-popover" @click.stop="xxx($event)">
     <div ref="contentWrapper" class="popover-wrapper" v-if="visible" @click.stop>
       <slot name="content">这是popover的内容部分</slot>
     </div>
@@ -18,21 +18,29 @@ export default {
     }
   },
   methods: {
-    xxx() {
-      this.visible = !this.visible;
-      if (this.visible === true) {
-        setTimeout(() => {
-          document.body.appendChild(this.$refs.contentWrapper);
-          let {width,height,top,left} = this.$refs.triggerWrapper.getBoundingClientRect();
-          this.$refs.contentWrapper.style.left = left+'px';
-          this.$refs.contentWrapper.style.top = top+'px';
-          let eventHandle = () => {
-            this.visible = false;
-            document.removeEventListener("click", eventHandle)
-          }
-          document.addEventListener("click", eventHandle);
-        })
+    xxx(event) {
+      if (this.$refs.triggerWrapper.contains(event.target)) {
+        this.visible = !this.visible;
+        if (this.visible === true) {
+          setTimeout(() => {
+            this.setElementPosition();
+            this.elementEvent();
+          })
+        }
       }
+    },
+    setElementPosition() {
+      document.body.appendChild(this.$refs.contentWrapper);
+      let {width, height, top, left} = this.$refs.triggerWrapper.getBoundingClientRect();
+      this.$refs.contentWrapper.style.left = left + 'px';
+      this.$refs.contentWrapper.style.top = top + 'px';
+    },
+    elementEvent() {
+      let eventHandle = () => {
+        this.visible = false;
+        document.removeEventListener("click", eventHandle)
+      }
+      document.addEventListener("click", eventHandle);
     }
   }
 }
@@ -43,6 +51,7 @@ export default {
   position: relative;
   display: inline-block;
 }
+
 .popover-wrapper {
   position: absolute;
   -webkit-transform: translateY(-100%);

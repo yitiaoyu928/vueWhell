@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="-webkit-transform: translate(200px,200px);-moz-transform: translate(200px,200px);-ms-transform: translate(200px,200px);-o-transform: translate(200px,200px);transform: translate(200px,200px);">
     <qgy-popover>
       <button>click Me</button>
     </qgy-popover>
