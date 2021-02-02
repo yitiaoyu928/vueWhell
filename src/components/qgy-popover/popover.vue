@@ -1,5 +1,5 @@
 <template>
-  <div class="qgy-popover" @click.stop="xxx($event)">
+  <div class="qgy-popover" @click.stop="onClick($event)">
     <div ref="contentWrapper" class="popover-wrapper" v-if="visible" @click.stop>
       <slot name="content">这是popover的内容部分</slot>
     </div>
@@ -18,7 +18,7 @@ export default {
     }
   },
   methods: {
-    xxx(event) {
+    onClick(event) {
       if (this.$refs.triggerWrapper.contains(event.target)) {
         this.visible = !this.visible;
         if (this.visible === true) {
