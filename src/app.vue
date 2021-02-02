@@ -3,6 +3,12 @@
     <qgy-popover>
       <button>click Me</button>
     </qgy-popover>
+    <qgy-popover>
+      <button>click Me</button>
+    </qgy-popover>
+    <qgy-popover>
+      <button>click Me</button>
+    </qgy-popover>
   </div>
 </template>
 <script>
