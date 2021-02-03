@@ -119,7 +119,7 @@ export default {
   }
 
   &.popover-bottom {
-    margin-top: 14px;
+    margin-top: 15px;
     &::before, &::after {
       content: '';
       width: 0;
