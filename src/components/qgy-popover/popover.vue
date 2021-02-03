@@ -1,7 +1,7 @@
 <template>
   <div class="qgy-popover" @click.stop="onClick($event)">
     <div ref="contentWrapper" class="popover-wrapper" v-if="visible" @click.stop>
-      <slot name="content">{{text}}</slot>
+      <slot name="content"></slot>
     </div>
     <span ref="triggerWrapper">
       <slot></slot>
@@ -13,10 +13,7 @@
 export default {
   name: "popover",
   props:{
-    text:{
-      type:String,
-      default:'hello Seven fish'
-    }
+
   },
   data() {
     return {

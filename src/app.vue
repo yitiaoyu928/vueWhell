@@ -1,6 +1,9 @@
 <template>
   <div style="-webkit-transform: translate(200px,200px);-moz-transform: translate(200px,200px);-ms-transform: translate(200px,200px);-o-transform: translate(200px,200px);transform: translate(200px,200px);">
     <qgy-popover>
+      <template #content>
+        <div>hello world</div>
+      </template>
       <button>click Me</button>
     </qgy-popover>
     <qgy-popover>
