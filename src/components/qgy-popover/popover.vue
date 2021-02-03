@@ -1,6 +1,7 @@
 <template>
   <div class="qgy-popover" @click.stop="onClick($event)">
-    <div ref="contentWrapper" class="popover-wrapper" v-if="visible" @click.stop>
+    <div ref="contentWrapper" class="popover-wrapper" v-if="visible" @click.stop
+         :class="{[`popover-${direction}`]:true}">
       <slot name="content"></slot>
     </div>
     <span ref="triggerWrapper">
@@ -12,8 +13,14 @@
 <script>
 export default {
   name: "popover",
-  props:{
-
+  props: {
+    direction: {
+      type: String,
+      default: "top",
+      validator(value) {
+        return ['top', 'left', 'bottom', 'right'].indexOf(value) !== -1;
+      }
+    }
   },
   data() {
     return {
@@ -25,17 +32,37 @@ export default {
       this.visible = !this.visible;
       if (this.visible === true) {
         setTimeout(() => {
-          this.setElementPosition();
+          this.setElementPosition(this.direction);
           this.elementEvent();
         })
       }
 
     },
-    setElementPosition() {
+    setElementPosition(direction) {
+      console.log(direction)
       document.body.appendChild(this.$refs.contentWrapper);
-      let {width, height, top, left} = this.$refs.triggerWrapper.getBoundingClientRect();
+      let {width, height,top, left} = this.$refs.triggerWrapper.getBoundingClientRect();
+      let {clientHeight} = this.$refs.contentWrapper;
       this.$refs.contentWrapper.style.left = left + window.scrollX + 'px';
       this.$refs.contentWrapper.style.top = top + window.scrollY + 'px';
+      switch (direction) {
+        case "top":
+          this.$refs.contentWrapper.style.left = left + window.scrollX + 'px';
+          this.$refs.contentWrapper.style.top = top + window.scrollY + 'px';
+          break;
+        case "bottom":
+          this.$refs.contentWrapper.style.left = left + window.scrollX + 'px';
+          this.$refs.contentWrapper.style.top = top+clientHeight+height +  window.scrollY + 'px';
+          break;
+        case "left":
+          this.$refs.contentWrapper.style.left = left + window.scrollX + 'px';
+          this.$refs.contentWrapper.style.top = top + window.scrollY + 'px';
+          break;
+        case "right":
+          this.$refs.contentWrapper.style.left = left + width + window.scrollX + 'px';
+          this.$refs.contentWrapper.style.top = top + clientHeight + window.scrollY + 'px';
+          break;
+      }
     },
     elementEvent() {
       let eventHandle = () => {
@@ -69,21 +96,93 @@ export default {
   -o-transform: translateY(-100%);
   transform: translateY(-100%);
 
-  &::before,&::after {
-    content: '';
-    width: 0;
-    height: 0;
-    position: absolute;
-    left: 10px;
-    border: 10px solid transparent;
+  &.popover-top {
+    margin-top: -10px;
+    &::before, &::after {
+      content: '';
+      width: 0;
+      height: 0;
+      position: absolute;
+      left: 10px;
+      border: 10px solid transparent;
+    }
+
+    &::before {
+      top: calc(100% + 1px);
+      border-top: 10px solid #999;
+    }
+
+    &::after {
+      top: 100%;
+      border-top: 10px solid #fff;
+    }
   }
-  &::before {
-    top: calc(100% + 1px);
-    border-top: 10px solid #999;
+
+  &.popover-bottom {
+    margin-top: 14px;
+    &::before, &::after {
+      content: '';
+      width: 0;
+      height: 0;
+      position: absolute;
+      left: 10px;
+      border: 10px solid transparent;
+    }
+
+    &::before {
+      bottom: calc(100% + 1px);
+      border-bottom: 10px solid #999;
+    }
+
+    &::after {
+      bottom: 100%;
+      border-bottom: 10px solid #fff;
+    }
   }
-  &::after {
-    top: 100%;
-    border-top: 10px solid #fff;
+
+  &.popover-left {
+    margin-left: -10px;
+    transform: translateX(-100%);
+    &::before, &::after {
+      content: '';
+      width: 0;
+      height: 0;
+      top: 10px;
+      position: absolute;
+      border: 10px solid transparent;
+    }
+
+    &::before {
+      left: calc(100% + 1px);
+      border-left: 10px solid #999;
+    }
+
+    &::after {
+      left: 100%;
+      border-left: 10px solid #fff;
+    }
+  }
+
+  &.popover-right {
+    margin-left: 10px;
+    &::before, &::after {
+      content: '';
+      width: 0;
+      height: 0;
+      top: 10px;
+      position: absolute;
+      border: 10px solid transparent;
+    }
+
+    &::before {
+      right: calc(100% + 1px);
+      border-right: 10px solid #999;
+    }
+
+    &::after {
+      right: 100%;
+      border-right: 10px solid #fff;
+    }
   }
 }
 </style>
