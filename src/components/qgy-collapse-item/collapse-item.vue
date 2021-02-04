@@ -70,6 +70,10 @@ export default {
   &:last-child {
     border: none;
   }
+  &:not(:last-child) {
+    border-left: none;
+    border-right: none;
+  }
   .collapse-item-wrapper {
     display: flex;
 
