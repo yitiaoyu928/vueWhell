@@ -86,8 +86,9 @@ export default {
     }
   }
   .collapse-item-content {
+    color: #000;
     &.active {
-
+      color: #666;
     }
   }
 }

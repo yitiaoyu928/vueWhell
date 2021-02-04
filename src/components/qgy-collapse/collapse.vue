@@ -40,12 +40,8 @@ export default {
 
 <style lang="scss" scoped>
 .qgy-collapse {
-  margin-top: -1px;
-  margin-left: -1px;
-  margin-right: -1px;
   border: 1px solid #999;
   border-radius: 5px;
   box-shadow: 0 1px 3px #999;
-
 }
 </style>
