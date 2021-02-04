@@ -45,7 +45,7 @@ module.exports = {
     devServer: {
         open: true,
         hot: true,
-        port: 928,
+        port: 999,
         contentBase: './src',
         // noInfo: true
     },
