@@ -70,3 +70,9 @@
 ## ```<qgy-tab-item>```组件
 + name：tab-item的名称，必须传入String类型
 + icon:给tab-item添加图标，string类型
+## ```<qgy-collapse>```组件
++ selected：当前选中的项，Number类型
++ ```<qgy-collapse-item>```子组件
+    - name:required
+    - title:标题
+    - content:显示的内容
